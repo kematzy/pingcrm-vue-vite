@@ -25,5 +25,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Blade::if('viteserver', function () {
+            if (app()->environment('production')) {
+                return false;
+            }
+
+            try {
+                Http::get('http://localhost:3000');  // TODO: convert to customisable ENV variable
+                return true;
+            } catch (ConnectionException $exception) {
+                return false;
+            }
+        });
     }
 }
