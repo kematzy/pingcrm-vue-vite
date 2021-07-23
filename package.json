@@ -1,14 +1,10 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production",
-        "heroku-postbuild": "npm run prod"
+        "dev": "vite",
+        "production": "vite build",
+        "serve": "vite preview",
+        "heroku-postbuild": "npm run production"
     },
     "dependencies": {
         "@inertiajs/inertia": "^0.9.2",
