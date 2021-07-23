@@ -12,7 +12,11 @@ Vue.use(VueMeta)
 InertiaProgress.init()
 
 createInertiaApp({
-  resolve: name => require(`./Pages/${name}`),
+  // resolve: name => require(`./Pages/${name}.vue`),
+  resolve: name => {
+    const pages = import.meta.glob('./Pages/**/*.vue')
+    return pages[`./Pages/${name}.vue`]().then(module => module.default)
+  },
   setup({ el, app, props }) {
     new Vue({
       metaInfo: {
