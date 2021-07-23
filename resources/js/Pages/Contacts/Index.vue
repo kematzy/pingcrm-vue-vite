@@ -63,13 +63,13 @@
 </template>
 
 <script>
-import Icon from '@/Shared/Icon'
+import Icon from '@/Shared/Icon.vue'
 import pickBy from 'lodash/pickBy'
-import Layout from '@/Shared/Layout'
+import Layout from '@/Shared/Layout.vue'
 import throttle from 'lodash/throttle'
 import mapValues from 'lodash/mapValues'
-import Pagination from '@/Shared/Pagination'
-import SearchFilter from '@/Shared/SearchFilter'
+import Pagination from '@/Shared/Pagination.vue'
+import SearchFilter from '@/Shared/SearchFilter.vue'
 
 export default {
   metaInfo: { title: 'Contacts' },
